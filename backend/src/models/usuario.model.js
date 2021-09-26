@@ -4,15 +4,11 @@ var Schema = mongoose.Schema;
 
 var UsuarioSchema  = Schema({
     name: String,
-    lastName: String,
     user:{ type: String, unique:true},
     password: String,
     Email: String,
-    rol: String,
-    puesto: String,
-    departamento: String,
-    celular: String,
-    foto: String
+    telefono: String,
+    rol: String
 })
 
 module.exports = mongoose.model('usuario', UsuarioSchema)

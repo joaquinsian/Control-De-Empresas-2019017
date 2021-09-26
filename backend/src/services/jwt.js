@@ -6,8 +6,7 @@ var secret = 'CDE'
 exports.createToken = function(user){
     var payload = {
         sub: user._id,
-        nombre: user.nombre,
-        usuario: user.usuario,
+        user: user.usuario,
         rol: user.rol,
         iat: moment().unix(),
         exp: moment().date(40, 'days').unix()

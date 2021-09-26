@@ -17,7 +17,7 @@ async function adminDefault(user, password){
 
             await Usuario.find({$or:[
                 {user: usuarioModel.user}
-             ]}).exec((err, adminEncontrado)=>{
+             ]}).exec((err, adminEncontrado)=>{ 
                  if(err){
                     console.log("Error en la petición");
                  }else if(adminEncontrado && adminEncontrado.length >=1){
@@ -52,6 +52,7 @@ async function addEmpresa(req, res){
         usuarioModel.name =  params.name;
         usuarioModel.Email = params.Email;
         usuarioModel.user = params.user;
+        usuarioModel.telefono = params.telefono;
         usuarioModel.password = params.password;
         usuarioModel.rol = "Empresa";
 

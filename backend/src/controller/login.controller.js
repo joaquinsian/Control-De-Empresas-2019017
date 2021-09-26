@@ -13,7 +13,7 @@ async function login(req, res) {
         } else if (usuarioVisto) {
             bcrypt.compare(params.password, usuarioVisto.password, (err, passCorrect) => {
                 if (passCorrect) {
-                    if (params.getToken === true) {
+                    if (params.getToken === "true") {
                         return res.status(200).send({ token: jwt.createToken(usuarioVisto) })
                     } else {
                         usuarioVisto.password = undefined;

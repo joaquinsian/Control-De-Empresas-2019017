@@ -6,13 +6,13 @@ const adminController = require('./src/controller/admin.controller')
 
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/DbControldeEmpresa', { useNewUrlParser: true, useUnifiedTopology: true }).then(()=>{
+mongoose.connect("mongodb+srv://admin:12345@controldeempresa.hiq7u.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true }).then(()=>{
     console.log("Se encuentra conectado a la base de datos");
 
 
     crearAdmin();
 
-    app.listen(3000, function() {
+    app.listen(process.env.PORT || 3000, function() {
         console.log("Está funcionando en el puerto 3000");
     })
 }).catch(err => console.log(err))

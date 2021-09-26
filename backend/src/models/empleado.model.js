@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var EmpleadoSchema =  Schema({
     name: String,
     lastName: String,
-    empresa: {type: Schema.Types.ObjectId},
+    empresa: {type: Schema.Types.ObjectId, ref: "usuario"},
     Email: String,
     puesto: String,
     departamento: String,
